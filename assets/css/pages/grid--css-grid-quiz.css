@@ -3,16 +3,16 @@
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
 
 
-  :root {
-    --bg: #f0f4f8;
-    --card: #ffffff;
-    --primary: #4361ee;
-    --primary-light: #eef2ff;
-    --primary-dark: #3730a3;
-    --text: #1e293b;
-    --sub: #64748b;
-    --muted: #94a3b8;
-    --border: #e2e8f0;
+  :root{
+    --bg: var(--page);
+    --card: var(--panel);
+    --primary: var(--primary-ui);
+    --primary-light: var(--primary-ui-pale);
+    --primary-dark: var(--primary-ui-hover);
+    --text: var(--ink);
+    --sub: var(--ink-sub);
+    --muted: var(--ink-muted);
+    --border: var(--line);
     --correct-bg: #f0fdf4;
     --correct-bd: #16a34a;
     --correct-text: #15803d;
