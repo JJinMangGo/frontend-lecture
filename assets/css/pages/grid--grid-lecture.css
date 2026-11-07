@@ -2,17 +2,17 @@
 
 /* ===== 리셋 & 기본 ===== */
 
-:root {
-  --bg: #f8f9fc;
-  --card: #ffffff;
-  --primary: #4361ee;
-  --primary-light: #eef2ff;
-  --primary-dark: #3730a3;
+:root{
+  --bg: var(--page);
+  --card: var(--panel);
+  --primary: var(--primary-ui);
+  --primary-light: var(--primary-ui-pale);
+  --primary-dark: var(--primary-ui-hover);
   --accent: #f72585;
-  --text: #1e293b;
-  --sub: #64748b;
-  --muted: #94a3b8;
-  --border: #e2e8f0;
+  --text: var(--ink);
+  --sub: var(--ink-sub);
+  --muted: var(--ink-muted);
+  --border: var(--line);
   --code-bg: #1e1e2e;
   --radius: 12px;
   --green: #10b981;
