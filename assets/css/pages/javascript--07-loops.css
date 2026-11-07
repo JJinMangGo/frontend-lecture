@@ -1,16 +1,16 @@
 /* Lesson-specific CSS extracted from javascript/07-loops.html */
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #f8f9fc;
-      --card: #ffffff;
-      --primary: #10b981;
-      --primary-light: #d1fae5;
-      --primary-dark: #065f46;
-      --text: #1e293b;
-      --sub: #64748b;
-      --muted: #94a3b8;
-      --border: #e2e8f0;
+    :root{
+      --bg: var(--page);
+      --card: var(--panel);
+      --primary: var(--primary-ui);
+      --primary-light: var(--primary-ui-pale);
+      --primary-dark: var(--primary-ui-hover);
+      --text: var(--ink);
+      --sub: var(--ink-sub);
+      --muted: var(--ink-muted);
+      --border: var(--line);
       --code-bg: #1e1e2e;
       --radius: 12px;
       --red: #ef4444;
