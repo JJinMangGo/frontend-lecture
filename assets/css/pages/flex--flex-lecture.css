@@ -1,15 +1,15 @@
 /* Original lesson-specific/demo styles extracted from flex/flex-lecture.html; consolidate after visual QA. */
 
-:root {
-  --bg: #f8f9fc;
-  --card: #ffffff;
-  --primary: #f72585;
-  --primary-light: #fff0f6;
-  --primary-dark: #9d0049;
-  --text: #1e293b;
-  --sub: #64748b;
-  --muted: #94a3b8;
-  --border: #e2e8f0;
+:root{
+  --bg: var(--page);
+  --card: var(--panel);
+  --primary: var(--primary-ui);
+  --primary-light: var(--primary-ui-pale);
+  --primary-dark: var(--primary-ui-hover);
+  --text: var(--ink);
+  --sub: var(--ink-sub);
+  --muted: var(--ink-muted);
+  --border: var(--line);
   --code-bg: #1e1e2e;
   --radius: 12px;
   --green: #10b981;
