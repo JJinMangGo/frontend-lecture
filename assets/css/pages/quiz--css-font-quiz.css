@@ -2,14 +2,14 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
-    :root {
-      --bg: #0f0f13;
+    :root{
+      --bg: var(--page);
       --surface: #1a1a22;
       --surface2: #22222e;
-      --border: #2e2e3e;
+      --border: var(--line);
       --accent: #6c63ff;
       --accent2: #ff6584;
-      --text: #e8e8f0;
+      --text: var(--ink);
       --text-muted: #7a7a9a;
       --correct: #3ecf8e;
       --wrong: #ff4d6d;
