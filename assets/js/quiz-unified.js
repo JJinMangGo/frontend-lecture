@@ -41,7 +41,7 @@ function render(){
    if(done&&i===q.ans)b.classList.add('is-correct');
    if(done&&i===saved&&!correct)b.classList.add('is-wrong');
    const marker=document.createElement('span');marker.className='quiz-choice-letter';marker.textContent=String.fromCharCode(65+i);
-   const label=document.createElement('span');label.textContent=optionText(option);b.append(marker,label);
+   const label=document.createElement('span');label.textContent=optionText(option);b.append(marker,label);if(option&&typeof option==='object'&&option.color){const swatch=document.createElement('span');swatch.setAttribute('aria-hidden','true');swatch.style.cssText='display:inline-block;flex-shrink:0;width:16px;height:16px;border-radius:4px;border:1px solid #cbd5e1;margin-left:auto';swatch.style.backgroundColor=option.color;b.append(swatch);}
    if(!done)b.addEventListener('click',()=>{answers[current]=i;render()});options.append(b)})
  }
  document.getElementById('quiz-prev').addEventListener('click',()=>{current=Math.max(0,current-1);render()});
