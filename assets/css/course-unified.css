@@ -1,0 +1,83 @@
+/* Frontend Lab shared visual system v1
+   Loaded last: improves consistency without resetting instructional demos.
+   Never use universal margin/padding resets here. */
+:root{
+ --lab-bg:#f6f7fb;--lab-surface:#ffffff;--lab-muted:#f1f4f8;--lab-ink:#172033;
+ --lab-sub:#536078;--lab-border:#dce3ec;--lab-accent:#3455d1;
+ --lab-accent-soft:#ecf0ff;--lab-success:#18794e;--lab-error:#b4233b;
+ --lab-radius:14px;--lab-width:1120px;
+ --lab-shadow:0 6px 24px rgba(25,40,71,.045);
+}
+html.dark{
+ --lab-bg:#11151f;--lab-surface:#1b2230;--lab-muted:#252e40;--lab-ink:#f3f6fc;
+ --lab-sub:#c3cbd9;--lab-border:#3b475d;--lab-accent:#afc3ff;
+ --lab-accent-soft:#2a3555;--lab-success:#7be3b1;--lab-error:#ff9caa;
+ --lab-shadow:0 6px 24px rgba(0,0,0,.15);
+}
+html{scroll-padding-top:84px}
+body.course-ui{font-family:Pretendard,'Noto Sans KR',system-ui,-apple-system,sans-serif;background:var(--lab-bg);color:var(--lab-ink);line-height:1.7;letter-spacing:-.015em}
+body.course-ui a{transition:color .15s,border-color .15s,background-color .15s}
+body.course-ui :is(a,button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid var(--lab-accent)!important;outline-offset:3px}
+body.course-ui :is(button,input,select,textarea){font:inherit}
+body.course-ui :is(button,[role="button"]){cursor:pointer}
+body.course-ui :is(h1,h2,h3){line-height:1.35;letter-spacing:-.035em}
+body.course-ui :is(p,li){overflow-wrap:break-word}
+body.course-ui :is(pre,code){font-family:ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:0}
+body.course-ui :is(pre,.code-block,.q-code){max-width:100%;overflow-x:auto}
+body.course-ui img{max-width:100%;height:auto}
+body.course-ui :is(.main,.wrap,.main-wrapper){min-width:0}
+body.course-ui .main-wrapper{max-width:var(--lab-width)}
+/* Shared lecture typography / scaffolding */
+body.course-ui .main{color:var(--lab-ink)}
+body.course-ui .main > .hero{border-bottom:1px solid var(--lab-border)}
+body.course-ui .main > .hero h1{font-size:clamp(2rem,4vw,3.2rem)}
+body.course-ui .main > .section{scroll-margin-top:28px}
+body.course-ui :is(.section-title,.box h2){color:var(--lab-ink);letter-spacing:-.035em}
+body.course-ui :is(.section-desc,.tip,.score-label){color:var(--lab-sub)}
+body.course-ui .main > .section > .card,
+body.course-ui .wrap > .box,
+body.course-ui .wrap > .intro,
+body.course-ui .wrap > .part{
+ background:var(--lab-surface);border:1px solid var(--lab-border);
+ border-radius:var(--lab-radius);box-shadow:var(--lab-shadow);
+}
+body.course-ui .main > .section > .card{margin-bottom:20px}
+body.course-ui .wrap > .box{padding:clamp(20px,3.5vw,36px)}
+body.course-ui .main .sidebar{border-right-color:var(--lab-border)}
+body.course-ui .sidebar :is(.nav-home,.nav-item):focus-visible{outline-offset:-3px}
+body.course-ui .nav-item.active{font-weight:700}
+body.course-ui :is(.tab-btn,.nav-btn,.opt-btn){border-radius:10px}
+body.course-ui :is(.tab-btn,.nav-btn,.opt-btn):not(:disabled):hover{border-color:var(--lab-accent)}
+body.course-ui :is(.tip,.note,.explanation){line-height:1.7}
+body.course-ui .nav-row{gap:12px;flex-wrap:wrap}
+body.course-ui .prog-fill{background:var(--lab-accent)}
+/* Dedicated quiz surfaces: avoid touching question/answer logic */
+body.course-ui:has(#qa){min-height:100vh}
+body.course-ui:has(#qa) > .card{width:min(100%,760px);margin:24px auto;background:var(--lab-surface);color:var(--lab-ink);border:1px solid var(--lab-border);border-radius:var(--lab-radius);box-shadow:var(--lab-shadow)}
+body.course-ui:has(#qa) :is(.q-text,.q-num){color:var(--lab-ink)}
+body.course-ui:has(#qa) .opt-btn:not(.correct):not(.wrong){background:var(--lab-surface);color:var(--lab-ink);border:1px solid var(--lab-border);text-align:left}
+body.course-ui:has(#qa) .opt-btn:not(:disabled):hover{background:var(--lab-accent-soft);border-color:var(--lab-accent)}
+body.course-ui:has(#qa) .nav-btn.primary{background:#3455d1;color:#fff;border-color:#3455d1}
+body.course-ui:has(#qa) .explanation{background:var(--lab-muted);color:var(--lab-ink);border-left-color:var(--lab-accent)}
+/* Gestalt pages (preserve their visual perception demos) */
+body.course-ui .wrap{max-width:min(var(--lab-width),100%);margin-inline:auto}
+body.course-ui .hero:has(+ .wrap){background:var(--lab-surface);color:var(--lab-ink);border-bottom:1px solid var(--lab-border)}
+body.course-ui .hero:has(+ .wrap) :is(h1,p,b){color:var(--lab-ink)}
+body.course-ui .hero:has(+ .wrap) .nav a{color:var(--lab-ink);border-color:var(--lab-border)}
+body.course-ui .hero:has(+ .wrap) .nav a.active{color:#fff;background:#3455d1;border-color:#3455d1}
+body.course-ui .wrap .note{background:var(--lab-accent-soft);color:var(--lab-ink);border-left:4px solid var(--lab-accent)}
+/* Home uses existing card layout, refreshed via common tokens */
+body.course-home .card{border-color:var(--lab-border);border-radius:var(--lab-radius)}
+body.course-home .main-wrapper{max-width:var(--lab-width)}
+body.course-home .card:focus-visible{outline:3px solid var(--lab-accent);outline-offset:3px}
+@media(max-width:760px){
+ body.course-ui .wrap{padding:28px 16px}
+ body.course-ui .main > .section{padding-inline:16px}
+ body.course-ui:has(#qa) > .card{margin:12px auto;padding:clamp(16px,4vw,28px)}
+ body.course-ui .nav-row{align-items:stretch}
+ body.course-ui .nav-row .nav-btn{min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ body.course-ui *,body.course-ui *::before,body.course-ui *::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
