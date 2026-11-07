@@ -2,17 +2,17 @@
 
     /* ===== 리셋 & 기본 ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #f8f9fc;
-      --card: #ffffff;
-      --primary: #10b981;
-      --primary-light: #d1fae5;
-      --primary-dark: #065f46;
+    :root{
+      --bg: var(--page);
+      --card: var(--panel);
+      --primary: var(--primary-ui);
+      --primary-light: var(--primary-ui-pale);
+      --primary-dark: var(--primary-ui-hover);
       --accent: #f72585;
-      --text: #1e293b;
-      --sub: #64748b;
-      --muted: #94a3b8;
-      --border: #e2e8f0;
+      --text: var(--ink);
+      --sub: var(--ink-sub);
+      --muted: var(--ink-muted);
+      --border: var(--line);
       --code-bg: #1e1e2e;
       --radius: 12px;
       --orange: #f97316;
