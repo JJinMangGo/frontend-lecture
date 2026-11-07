@@ -250,3 +250,7 @@ body {
   font-size: 12px; font-weight: 600;
   transition: all 0.3s;
 }
+
+/* Additional formerly inline demo styles */
+
+.hover-card:hover .overlay-box { left: 0 !important; }
