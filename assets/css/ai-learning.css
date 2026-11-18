@@ -38,6 +38,5 @@ body.ai-page{margin:0;background:var(--page);color:var(--ink);font:400 16px/1.7 
 .ai-summary{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;margin:0 0 20px}
 .ai-summary h2{font-size:20px;margin:0 0 10px}
 .ai-summary p{color:var(--ink-sub);margin:0}
-.ai-grid>.ai-advanced{grid-column:1/-1;margin:0}
 .ai-footer{text-align:center;color:var(--ink-muted);font-size:12px;margin-top:22px}
 @media(max-width:650px){.ai-shell{padding:20px 14px 50px}.ai-grid{grid-template-columns:1fr}.ai-bottom-links{flex-direction:column}.ai-tabs{justify-content:stretch}.ai-tabs a{flex:1 1 40%}}
