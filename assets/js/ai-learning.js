@@ -37,6 +37,9 @@
  const analogyBox=document.createElement('div');analogyBox.className='ai-example';analogyBox.append(txt('strong','','쉽게 이해하기'),txt('p','',analogy));card.append(analogyBox);
  const caseBox=document.createElement('div');caseBox.className='ai-case';caseBox.append(txt('strong','','수업·실무 사례'),txt('p','',example));card.append(caseBox);
  const pointBox=document.createElement('div');pointBox.className='ai-point';pointBox.append(txt('strong','','핵심 기억하기'),txt('p','',point));card.append(pointBox);root.append(card)});
+ if(step===1){const check=document.createElement('section');check.className='ai-topic';check.append(txt('div','ai-k','실무 체크리스트'),txt('h2','','AI가 틀릴 때 확인하는 3단계'));const items=[['① 근거 확인','AI가 실제 자료·파일·링크를 읽었는지 확인해요.'],['② 실행 결과 확인','코드나 디자인을 수정했다면 변경 파일과 브라우저 화면을 검사해요.'],['③ 기준에 맞춰 재검증','요구사항·수치·반응형·접근성 기준으로 다시 확인하고 필요한 부분만 수정해요.']];items.forEach(([heading,body])=>{const box=document.createElement('div');box.className='ai-example';box.append(txt('strong','',heading),txt('p','',body));check.append(box)});root.append(check)}
+ const boundaries={1:'이 단계에서는 모델을 실제로 학습시키거나 내부 가중치를 계산하지 않아요.',2:'이 단계에서는 완성된 코딩 에이전트나 하네스를 직접 개발하지 않아요.',3:'이 단계에서는 외부 API 인증키를 발급하거나 실제 서비스 계정을 연결하지 않아요.',4:'이 단계에서는 GPU 설정이나 로컬 모델 설치 실습을 진행하지 않아요.',5:'이 단계에서는 파인튜닝을 실행하거나 비공개 자료를 업로드하지 않아요.',6:'이 단계에서는 실제 고객 데이터를 이용한 무인 자동화를 실행하지 않아요.'};
+ const scope=document.createElement('section');scope.className='ai-summary';scope.append(txt('h2','','이 단계에서 다루지 않는 것'),txt('p','',boundaries[step]));root.append(scope);
  if(step===6){
   const caseStudy=document.createElement('section');caseStudy.className='ai-topic';
   caseStudy.append(
