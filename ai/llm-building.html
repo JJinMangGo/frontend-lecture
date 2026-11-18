@@ -11,11 +11,28 @@
 <style>
 html{scroll-behavior:smooth} .learning-nav{position:sticky;top:0;z-index:10;background:rgba(246,247,251,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}.learning-nav .inner{max-width:980px;margin:auto;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}.learning-nav a{color:var(--ink-sub);font-size:13px;text-decoration:none;padding:7px 10px;border-radius:8px}.learning-nav a:hover,.learning-nav a:focus-visible{background:var(--primary-ui-pale);color:var(--primary-ui-hover)}.unit{scroll-margin-top:85px}.unit .eyebrow{font-size:12px;font-weight:800;color:var(--primary-ui-hover);letter-spacing:.08em}.unit h2{font-size:clamp(23px,4vw,30px);margin:8px 0 16px}.unit h3{font-size:17px;margin:22px 0 10px}.lead{font-size:17px;line-height:1.8}.note{padding:18px;background:var(--panel-muted);border-radius:12px;border:1px solid var(--line);margin:18px 0}.note strong{display:block;margin-bottom:6px}.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:16px 0}.flow span{background:var(--primary-ui-pale);border:1px solid var(--line);border-radius:9px;padding:10px 13px;font-size:14px;font-weight:700}.flow b{color:var(--ink-muted)}.mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:16px 0}.mini-grid>div{padding:16px;border:1px solid var(--line);border-radius:12px}.mini-grid strong{display:block;margin-bottom:8px}.mini-grid p{margin:0;font-size:14px}.demo{border:1px solid var(--line);border-radius:13px;padding:20px;margin:18px 0;background:#fff}.demo input{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;font:inherit;padding:12px}.demo button{border:1px solid var(--primary-ui);background:var(--primary-ui);color:white;border-radius:8px;padding:10px 15px;font:inherit;font-weight:700;cursor:pointer}.demo button:focus-visible,.demo input:focus-visible,.quiz-option:focus-visible{outline:3px solid var(--focus);outline-offset:2px}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.chips span{padding:5px 11px;border-radius:8px;border:1px solid #b8c9fa;background:var(--primary-ui-pale);font-size:14px}.muted{color:var(--ink-sub);font-size:13px}.quiz-item{padding:16px 0;border-bottom:1px solid var(--line)}.quiz-item p{font-weight:750}.quiz-option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:11px;margin:7px 0;cursor:pointer;font:inherit}.quiz-option[aria-pressed=true]{border-color:var(--primary-ui);background:var(--primary-ui-pale)}.quiz-result{margin-top:14px;font-weight:750}.ref-links a{word-break:break-all}.unit ul{padding-left:23px;line-height:1.9}.source{font-size:13px;color:var(--ink-sub)}@media(max-width:650px){.learning-nav .inner{gap:2px;padding:8px}.learning-nav a{font-size:12px;padding:6px}.demo{padding:14px}}
 </style>
+<style>
+/* Match the AI curriculum's common navigation, panels and exercise UI. */
+.learning-nav{position:static;background:transparent;backdrop-filter:none;border-bottom:0}
+.learning-nav .inner{justify-content:center;gap:8px;max-width:980px;padding:18px 20px 0}
+.learning-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 15px;border:1px solid var(--line);border-radius:9px;background:var(--panel);font-size:13px;font-weight:700;color:var(--ink-sub)}
+.learning-nav a:hover,.learning-nav a:focus-visible{background:var(--primary-ui-pale);color:var(--primary-ui-hover);border-color:var(--primary-ui)}
+.unit .eyebrow{color:var(--primary-ui-hover)}
+.unit h2{font-size:clamp(20px,3vw,25px);line-height:1.35;letter-spacing:-.03em}
+.unit h3{color:var(--ink);font-weight:750}
+.note{background:var(--panel-muted);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.mini-grid>div,.demo{background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.demo button{min-height:44px;background:var(--primary-ui);border-color:var(--primary-ui)}
+.demo button:hover{background:var(--primary-ui-hover)}
+.quiz-option{min-height:44px}.quiz-option:hover{border-color:var(--primary-ui)}
+.ref-links a,.source a{color:var(--primary-ui-hover)}
+@media(max-width:650px){.learning-nav .inner{padding:12px 14px 0}.learning-nav a{flex:1 1 auto}}
+</style>
 </head>
 <body class="ai-page">
 <a href="#main" class="skip-link">본문 바로가기</a>
 <nav class="learning-nav" aria-label="단원 이동"><div class="inner">
-<a href="../index.html#ai">← AI 학습 홈</a><a href="#unit-1">1. 문장 예측</a><a href="#unit-2">2. 학습 데이터</a><a href="#unit-3">3. 사전학습</a><a href="#unit-4">4. 추가학습</a><a href="#unit-5">5. 평가·시스템</a><a href="#check">확인 문제</a>
+<a href="../index.html#ai">← AI 학습 홈</a><a href="agent-frameworks.html">심화 A · 에이전트</a><a href="#unit-1">1. 문장 예측</a><a href="#unit-2">2. 학습 데이터</a><a href="#unit-3">3. 사전학습</a><a href="#unit-4">4. 추가학습</a><a href="#unit-5">5. 평가·시스템</a><a href="#check">확인 문제</a>
 </div></nav>
 <main class="ai-shell" id="main">
 <header class="ai-header"><span class="ai-kicker">AI LEARNING · 심화 과정</span><h1>LLM은 어떻게 만들어질까?</h1><p>ChatGPT·Claude의 작동 원리를 학습 과정부터 평가까지 이해하는 5단원</p><div class="ai-actions" style="justify-content:center"><a class="ai-link primary" href="#unit-1">학습 시작</a><a class="ai-link" href="step-01.html">기존 AI 1단계 복습</a></div></header>
