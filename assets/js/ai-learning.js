@@ -2,11 +2,14 @@
 (()=>{
  const lessons=window.AI_LESSONS||[];
  const root=document.getElementById('ai-lessons');
- if(!root)return;
- const step=Number(root.dataset.step||0);
  const link=(href,label,extraClass='')=>{const a=document.createElement('a');a.href=href;a.textContent=label;a.className='ai-link '+extraClass;return a;};
  const txt=(tag,cls,value)=>{const e=document.createElement(tag);if(cls)e.className=cls;e.textContent=value;return e;};
- const nav=(current)=>{const nav=document.createElement('nav');nav.className='ai-tabs';nav.setAttribute('aria-label','AI 학습 단계 이동');[['index.html','AI 전체 목차',0],...lessons.map(x=>['step-'+String(x.id).padStart(2,'0')+'.html',String(x.id)+'단계',x.id])].forEach(([href,name,id])=>{const a=document.createElement('a');a.href=href;a.textContent=name;if(current===id)a.setAttribute('aria-current','page');nav.append(a)});return nav;};
+ // Shared navigation is the single source of truth for theory and advanced lessons.
+ const navItems=[['index.html','AI 전체 목차','index'],...lessons.map(x=>['step-'+String(x.id).padStart(2,'0')+'.html',String(x.id)+'단계',String(x.id)]),['agent-frameworks.html','심화 A','advanced-a'],['llm-building.html','심화 B','advanced-b']];
+ const nav=(current)=>{const n=document.createElement('nav');n.className='ai-tabs';n.setAttribute('aria-label','AI 학습 단계 이동');navItems.forEach(([href,name,id])=>{const a=document.createElement('a');a.href=href;a.textContent=name;if(String(current)===id)a.setAttribute('aria-current','page');n.append(a)});return n;};
+ document.querySelectorAll('[data-ai-nav]').forEach(slot=>slot.replaceWith(nav(slot.dataset.aiNav)));
+ if(!root)return;
+ const step=Number(root.dataset.step||0);
  const createHeader=(title,subtitle,eyebrow,current)=>{const h=document.createElement('header');h.className='ai-header';const home=document.createElement('a');home.href='../index.html';home.className='ai-home';home.textContent='Frontend Lab · 강의 홈';h.append(home,txt('span','ai-kicker',eyebrow),txt('h1','',title),txt('p','',subtitle),nav(current));return h;};
  const footer=(current)=>{const sec=document.createElement('nav');sec.className='ai-bottom';sec.setAttribute('aria-label','다른 AI 학습 페이지');sec.append(txt('h2','','다른 학습 페이지로 이동'));const links=document.createElement('div');links.className='ai-bottom-links';if(current){if(current>1)links.append(link('step-'+String(current-1).padStart(2,'0')+'.html','← 이전 단계'));links.append(link('quiz-'+String(current).padStart(2,'0')+'.html',current+'단계 문제 풀기','primary'));if(current<lessons.length)links.append(link('step-'+String(current+1).padStart(2,'0')+'.html','다음 단계 →'));}if(current===lessons.length){const guide=link('https://github.com/JJinMangGo/JJinMangGo/tree/main/ai-system-design-easy','심화 읽기 · AI 시스템 설계 20편 →');guide.target='_blank';guide.rel='noopener noreferrer';links.append(guide)}
  links.append(link('index.html','AI 전체 목차'));links.append(link('../index.html','Frontend Lab 홈'));sec.append(links);return sec;};
