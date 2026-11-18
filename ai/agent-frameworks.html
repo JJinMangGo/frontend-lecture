@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="../assets/css/reset.css">
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/ai-learning.css">
+  <script src="content.data.js" defer></script>
+  <script src="../assets/js/ai-learning.js" defer></script>
   <style>
     html{scroll-behavior:smooth}.lesson-section{scroll-margin-top:20px}.lesson-section h3{font-size:19px;margin:20px 0 10px}.lesson-section p{line-height:1.85}.comparison{overflow-x:auto;margin:20px 0}.comparison table{width:100%;border-collapse:collapse;min-width:610px;font-size:14px}.comparison th,.comparison td{text-align:left;vertical-align:top;padding:15px 13px;border-bottom:1px solid var(--line);line-height:1.65}.comparison th{background:var(--panel-muted)}.comparison a{color:var(--primary-ui-hover)}.example-flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:18px 0}.example-flow span{border-radius:10px;padding:12px;background:var(--primary-ui-pale);font-weight:700}.example-flow b{color:var(--ink-muted)}.quiz-item{border-top:1px solid var(--line);padding:19px 0}.quiz-item p{font-weight:700}.quiz-option{display:block;text-align:left;width:100%;background:white;color:var(--ink);border:1px solid var(--line);border-radius:9px;margin:8px 0;padding:11px;cursor:pointer;font:inherit}.quiz-option[aria-pressed=true]{background:var(--primary-ui-pale);border-color:var(--primary-ui)}.quiz-option:focus-visible{outline:3px solid var(--focus);outline-offset:2px}.quiz-feedback{font-size:14px;color:var(--ink-sub)}.quiz-result{font-weight:700;margin-top:13px}@media(max-width:600px){.comparison table{font-size:13px}}
   </style>
@@ -22,9 +24,7 @@
       <span class="ai-kicker">AI LEARNING · 심화 A</span>
       <h1>AI 에이전트 개발 프레임워크</h1>
       <p>Claude Code·피클 같은 에이전트는 어떻게 만들까?</p>
-      <nav class="ai-tabs" aria-label="AI 학습 단계 이동">
-        <a href="index.html">AI 전체 목차</a><a href="step-01.html">1단계</a><a href="step-02.html">2단계</a><a href="step-03.html">3단계</a><a href="step-04.html">4단계</a><a href="step-05.html">5단계</a><a href="step-06.html">6단계</a><a href="agent-frameworks.html" aria-current="page">심화 A</a><a href="llm-building.html">심화 B</a>
-      </nav>
+      <nav data-ai-nav="advanced-a" aria-label="AI 학습 단계 이동"></nav>
     </header>
     <section class="ai-summary"><h2>이번 시간에 배울 것</h2><p>완성된 AI 에이전트 제품과 개발 프레임워크의 차이, 대표 도구의 특징, Vercel eve의 활용 방법을 배워요.</p><div class="ai-keywords"><span>AI Agent</span><span>Framework</span><span>LangGraph</span><span>CrewAI</span><span>eve</span><span>Harness</span></div></section>
     <section class="ai-topic lesson-section"><div class="ai-k">시작하기</div><h2>먼저 이것부터 구분해요</h2><p><strong>Claude Code나 피클은 사용자가 이용하는 AI 에이전트 제품의 사례</strong>예요. 반면 LangGraph, CrewAI, OpenAI Agents SDK, eve는 개발자가 <strong>그런 종류의 에이전트를 만들 때 활용할 수 있는 도구</strong>예요. 특정 제품이 이 프레임워크를 사용했다는 뜻은 아니에요.</p><div class="example-flow"><span>AI 모델</span><b>+</b><span>개발 프레임워크</span><b>+</b><span>개발자의 기능·권한 설계</span><b>→</b><span>AI 에이전트 서비스</span></div></section>
