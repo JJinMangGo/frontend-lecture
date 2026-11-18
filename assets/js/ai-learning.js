@@ -24,11 +24,13 @@
  );
  const advancedLinks=document.createElement('div');advancedLinks.className='ai-actions';
  advancedLinks.append(link('agent-frameworks.html','심화 A · 에이전트 프레임워크 →','primary'));
+ advancedLinks.append(link('quiz-advanced-a.html','심화 A · 10문제 풀기'));
  advancedLinks.append(link('llm-building.html','심화 B · LLM 제작 원리 →'));
+ advancedLinks.append(link('quiz-advanced-b.html','심화 B · 10문제 풀기'));
  const advancedLink=link('https://github.com/JJinMangGo/JJinMangGo/tree/main/ai-system-design-easy','추가 읽기 · AI 시스템 설계 20편 →');
  advancedLink.target='_blank';advancedLink.rel='noopener noreferrer';
  advancedLinks.append(advancedLink);advanced.append(advancedLinks);
- root.append(advanced,footer(0));
+ grid.append(advanced);root.append(footer(0));
  }else{
  const lesson=lessons.find(x=>x.id===step);if(!lesson){root.append(txt('p','','학습 단계를 찾을 수 없습니다.'));return}
  root.append(createHeader(lesson.title,lesson.subtitle,'AI LEARNING · STEP '+String(step).padStart(2,'0'),step));
