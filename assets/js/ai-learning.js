@@ -17,20 +17,12 @@
  root.append(createHeader('AI 기초부터 에이전트까지','어려운 AI 용어를 쉬운 비유와 실무 사례로 배우는 6단계 학습 과정','AI LEARNING · 6 STEPS',0));
  const grid=document.createElement('div');grid.className='ai-grid';
  for(const lesson of lessons){const card=document.createElement('article');card.className='ai-step-card';card.append(txt('div','ai-k','STEP '+String(lesson.id).padStart(2,'0')),txt('h2','',lesson.title),txt('p','desc',lesson.subtitle),txt('p','terms',lesson.terms));const acts=document.createElement('div');acts.className='ai-actions';acts.append(link('step-'+String(lesson.id).padStart(2,'0')+'.html','이론 학습','primary'),link('quiz-'+String(lesson.id).padStart(2,'0')+'.html','10문제 풀기'));card.append(acts);grid.append(card)}root.append(grid);
- const advanced=document.createElement('section');advanced.className='ai-summary ai-advanced';advanced.append(
-  txt('div','ai-k','NEXT STEP · 기초 6단계 이후'),
-  txt('h2','','심화 학습 순서'),
-  txt('p','','먼저 심화 A에서 에이전트·하네스의 실제 개발 도구를 비교하고, 심화 B에서 LLM의 학습 과정을 알아보세요. 이후 관심 있는 주제를 AI 시스템 설계 해설 20편에서 더 읽을 수 있어요.')
- );
- const advancedLinks=document.createElement('div');advancedLinks.className='ai-actions';
- advancedLinks.append(link('agent-frameworks.html','심화 A · 에이전트 프레임워크 →','primary'));
- advancedLinks.append(link('quiz-advanced-a.html','심화 A · 10문제 풀기'));
- advancedLinks.append(link('llm-building.html','심화 B · LLM 제작 원리 →'));
- advancedLinks.append(link('quiz-advanced-b.html','심화 B · 10문제 풀기'));
- const advancedLink=link('https://github.com/JJinMangGo/JJinMangGo/tree/main/ai-system-design-easy','추가 읽기 · AI 시스템 설계 20편 →');
- advancedLink.target='_blank';advancedLink.rel='noopener noreferrer';
- advancedLinks.append(advancedLink);advanced.append(advancedLinks);
- grid.append(advanced);root.append(footer(0));
+ const advancedLessons=[
+  {letter:'A',title:'AI 에이전트 개발 프레임워크',subtitle:'Claude Code·피클 같은 에이전트와 LangGraph·CrewAI·eve의 차이',terms:'Agent · Harness · Framework · HITL',theory:'agent-frameworks.html',quiz:'quiz-advanced-a.html'},
+  {letter:'B',title:'LLM은 어떻게 만들어질까?',subtitle:'토큰화, 데이터 정제, 사전학습, RLHF·DPO와 평가의 흐름',terms:'Token · Training · Loss · Evaluation',theory:'llm-building.html',quiz:'quiz-advanced-b.html'}
+ ];
+ for(const lesson of advancedLessons){const card=document.createElement('article');card.className='ai-step-card';card.append(txt('div','ai-k','ADVANCED '+lesson.letter),txt('h2','',lesson.title),txt('p','desc',lesson.subtitle),txt('p','terms',lesson.terms));const acts=document.createElement('div');acts.className='ai-actions';acts.append(link(lesson.theory,'이론 학습','primary'),link(lesson.quiz,'10문제 풀기'));card.append(acts);grid.append(card)}
+ const bottom=footer(0);const guide=link('https://github.com/JJinMangGo/JJinMangGo/tree/main/ai-system-design-easy','추가 읽기 · AI 시스템 설계 20편 →');guide.target='_blank';guide.rel='noopener noreferrer';bottom.querySelector('.ai-bottom-links').append(guide);root.append(bottom);
  }else{
  const lesson=lessons.find(x=>x.id===step);if(!lesson){root.append(txt('p','','학습 단계를 찾을 수 없습니다.'));return}
  root.append(createHeader(lesson.title,lesson.subtitle,'AI LEARNING · STEP '+String(step).padStart(2,'0'),step));
