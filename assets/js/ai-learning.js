@@ -15,13 +15,14 @@
  const grid=document.createElement('div');grid.className='ai-grid';
  for(const lesson of lessons){const card=document.createElement('article');card.className='ai-step-card';card.append(txt('div','ai-k','STEP '+String(lesson.id).padStart(2,'0')),txt('h2','',lesson.title),txt('p','desc',lesson.subtitle),txt('p','terms',lesson.terms));const acts=document.createElement('div');acts.className='ai-actions';acts.append(link('step-'+String(lesson.id).padStart(2,'0')+'.html','이론 학습','primary'),link('quiz-'+String(lesson.id).padStart(2,'0')+'.html','10문제 풀기'));card.append(acts);grid.append(card)}root.append(grid);
  const advanced=document.createElement('section');advanced.className='ai-summary ai-advanced';advanced.append(
-  txt('div','ai-k','NEXT STEP · 심화 읽기'),
-  txt('h2','','AI 시스템 설계, 실제 서비스까지 이해하기'),
-  txt('p','','6단계 이론과 퀴즈를 마쳤다면, 토큰·RAG·에이전트·MCP부터 AI UX·평가·배포까지 연결하는 한국어 해설 20편을 읽어보세요.')
+  txt('div','ai-k','NEXT STEP · 기초 6단계 이후'),
+  txt('h2','','심화 학습 순서'),
+  txt('p','','먼저 심화 A에서 에이전트·하네스의 실제 개발 도구를 비교하고, 심화 B에서 LLM의 학습 과정을 알아보세요. 이후 관심 있는 주제를 AI 시스템 설계 해설 20편에서 더 읽을 수 있어요.')
  );
  const advancedLinks=document.createElement('div');advancedLinks.className='ai-actions';
- advancedLinks.append(link('agent-frameworks.html','AI 에이전트 개발 프레임워크 비교 →','primary'));
- const advancedLink=link('https://github.com/JJinMangGo/JJinMangGo/tree/main/ai-system-design-easy','AI 시스템 설계 해설 20편 읽기 →','primary');
+ advancedLinks.append(link('agent-frameworks.html','심화 A · 에이전트 프레임워크 →','primary'));
+ advancedLinks.append(link('llm-building.html','심화 B · LLM 제작 원리 →'));
+ const advancedLink=link('https://github.com/JJinMangGo/JJinMangGo/tree/main/ai-system-design-easy','추가 읽기 · AI 시스템 설계 20편 →');
  advancedLink.target='_blank';advancedLink.rel='noopener noreferrer';
  advancedLinks.append(advancedLink);advanced.append(advancedLinks);
  root.append(advanced,footer(0));
