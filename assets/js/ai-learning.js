@@ -20,6 +20,7 @@
   txt('p','','6단계 이론과 퀴즈를 마쳤다면, 토큰·RAG·에이전트·MCP부터 AI UX·평가·배포까지 연결하는 한국어 해설 20편을 읽어보세요.')
  );
  const advancedLinks=document.createElement('div');advancedLinks.className='ai-actions';
+ advancedLinks.append(link('agent-frameworks.html','AI 에이전트 개발 프레임워크 비교 →','primary'));
  const advancedLink=link('https://github.com/JJinMangGo/JJinMangGo/tree/main/ai-system-design-easy','AI 시스템 설계 해설 20편 읽기 →','primary');
  advancedLink.target='_blank';advancedLink.rel='noopener noreferrer';
  advancedLinks.append(advancedLink);advanced.append(advancedLinks);
